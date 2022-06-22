@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
 
-import { Typography, Card, CardContent, Stack } from "@mui/material";
+import { Card } from "@mui/material";
 
 type ItemCardWrapperProps = {
   children?: JSX.Element;

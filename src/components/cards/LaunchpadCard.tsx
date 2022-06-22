@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Typography, Card, CardContent, Stack } from "@mui/material";
+import { Typography, CardContent, Stack } from "@mui/material";
 
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";

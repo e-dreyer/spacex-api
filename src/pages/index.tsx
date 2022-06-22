@@ -1,9 +1,4 @@
 import {
-  Typography,
-  Card,
-  CardContent,
-  Stack,
-  Box,
   List,
   ListItem,
   ListItemButton,
@@ -11,7 +6,6 @@ import {
   ListItemText,
 } from "@mui/material";
 
-import HomeIcon from "@mui/icons-material/Home";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
 import RocketIcon from "@mui/icons-material/Rocket";

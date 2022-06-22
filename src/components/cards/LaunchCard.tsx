@@ -3,12 +3,10 @@ import Link from "next/link";
 
 import {
   Typography,
-  CardMedia,
   CardContent,
   Stack,
   ImageList,
   ImageListItem,
-  ListItemIcon,
 } from "@mui/material";
 
 import RocketIcon from "@mui/icons-material/Rocket";

@@ -9,7 +9,12 @@ type ItemCardWrapperProps = {
 export default function ItemCardWrapper(props: ItemCardWrapperProps) {
   return (
     <>
-      <Card sx={{ width: "100%", maxWidth: "1000px", minWidth: "500px" }}>
+      <Card
+        sx={{
+          width: "100%",
+          maxWidth: "800px",
+        }}
+      >
         {props.children}
       </Card>
     </>

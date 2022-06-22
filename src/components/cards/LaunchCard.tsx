@@ -27,35 +27,10 @@ export default function LaunchCard(props: LaunchCardProps) {
     return null;
   }
 
-  const getRandomImg = (imgs: Maybe<string>[]) => {
-    return imgs[Math.floor(Math.random() * imgs.length)];
-  };
-
-  const getImage = () => {
-    if (props.launch?.links?.flickr_images) {
-      return (
-        <ImageList cols={props.launch?.links?.flickr_images.length}>
-          {props.launch?.links?.flickr_images.map((item, index) => (
-            <ImageListItem key={index}>
-              <img
-                src={`${item}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt=""
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      );
-    }
-    return null;
-  };
   return (
     <>
       <ItemCardWrapper>
         <>
-          {getImage()}
-
           <CardContent>
             <Link href={`/launches/${props.launch.id}`}>
               <Typography variant="h5" component="div">

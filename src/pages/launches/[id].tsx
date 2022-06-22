@@ -6,6 +6,7 @@ import AsyncPage from "../../components/asyncPage/AsyncPage";
 import LaunchCard from "../../components/cards/LaunchCard";
 
 import { Launch } from "../../types/types";
+import { Box } from "@mui/material";
 
 export default function LaunchPage() {
   const router = useRouter();

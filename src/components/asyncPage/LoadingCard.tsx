@@ -18,7 +18,7 @@ function LoadingCard(props: LoadingCardProps) {
   return (
     <>
       {props.loading ? (
-        <Card>
+        <Card sx={{ width: "100%" }}>
           <CardContent>
             <Typography variant="h6" component="div" textAlign="center">
               <CircularProgress color="success" />
@@ -26,10 +26,12 @@ function LoadingCard(props: LoadingCardProps) {
           </CardContent>
         </Card>
       ) : props.error ? (
-        <Card>
-          <Alert variant="filled" severity="error">
-            An unexpected error occurred while loading the data...
-          </Alert>
+        <Card sx={{ width: "100%" }}>
+          <CardContent>
+            <Alert variant="filled" severity="error">
+              An unexpected error occurred while loading the data...
+            </Alert>
+          </CardContent>
         </Card>
       ) : null}
     </>

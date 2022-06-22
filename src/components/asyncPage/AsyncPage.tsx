@@ -2,6 +2,7 @@ import React from "react";
 import { ApolloError } from "@apollo/client";
 
 import LoadingCard from "./LoadingCard";
+import { Box } from "@mui/material";
 
 type AsyncPageProps = {
   children?: JSX.Element;
@@ -13,8 +14,19 @@ type AsyncPageProps = {
 function AsyncPage(props: AsyncPageProps) {
   return (
     <>
-      <LoadingCard loading={props.loading} error={props.error} />
-      {props.children}
+      <Box
+        mt={5}
+        p={1}
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          maxWidth: "800px",
+        }}
+      >
+        <LoadingCard loading={props.loading} error={props.error} />
+        {props.children}
+      </Box>
     </>
   );
 }

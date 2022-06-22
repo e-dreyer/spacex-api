@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       {/* Header */}
       <Header key="Header" />
       {/* Wrap the entire app in a box */}
-      <Box mt={8} key="Body" sx={{ width: "100%" }}>
+      <Box mt={5} p={1} sx={{ display: "flex", justifyContent: "center" }}>
         {children}
       </Box>
     </>

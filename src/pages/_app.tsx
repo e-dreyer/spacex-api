@@ -2,21 +2,12 @@ import type { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
-import getSchema from "../schema";
-import context from "../context";
-
 import resolvers from "../schema/resolvers";
 import typedefs from "../schema/typeDefs";
 
 import Layout from "../components/layout";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
   uri: "https://api.spacex.land/graphql/",

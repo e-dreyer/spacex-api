@@ -13,7 +13,7 @@ import RocketIcon from "@mui/icons-material/Rocket";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 
-import ItemCardWrapper from "./ItemCardWrapper";
+import ItemCardWrapper from "./CardWrapper";
 
 import { Launch } from "../../types/types";
 import { Maybe } from "graphql/jsutils/Maybe";

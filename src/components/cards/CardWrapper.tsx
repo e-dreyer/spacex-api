@@ -10,9 +10,9 @@ export default function ItemCardWrapper(props: ItemCardWrapperProps) {
   return (
     <>
       <Card
+        raised
         sx={{
-          width: "100%",
-          maxWidth: "800px",
+          border: "3px dashed black",
         }}
       >
         {props.children}

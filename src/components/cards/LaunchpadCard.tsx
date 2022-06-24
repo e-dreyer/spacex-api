@@ -7,7 +7,7 @@ import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
-import ItemCardWrapper from "./ItemCardWrapper";
+import ItemCardWrapper from "./CardWrapper";
 
 import { Launchpad } from "../../types/types";
 

@@ -9,6 +9,8 @@ import {
   Alert,
 } from "@mui/material";
 
+import CardWrapper from "../cards/CardWrapper";
+
 type LoadingCardProps = {
   loading: boolean;
   error: ApolloError | undefined;
@@ -18,21 +20,21 @@ function LoadingCard(props: LoadingCardProps) {
   return (
     <>
       {props.loading ? (
-        <Card sx={{ width: "100%" }}>
+        <CardWrapper>
           <CardContent>
             <Typography variant="h6" component="div" textAlign="center">
-              <CircularProgress color="success" />
+              <CircularProgress color="primary" />
             </Typography>
           </CardContent>
-        </Card>
+        </CardWrapper>
       ) : props.error ? (
-        <Card sx={{ width: "100%" }}>
+        <CardWrapper>
           <CardContent>
             <Alert variant="filled" severity="error">
               An unexpected error occurred while loading the data...
             </Alert>
           </CardContent>
-        </Card>
+        </CardWrapper>
       ) : null}
     </>
   );

@@ -2,6 +2,8 @@ import type { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
+import CssBaseline from "@mui/material/CssBaseline";
+
 import resolvers from "../schema/resolvers";
 import typedefs from "../schema/typeDefs";
 
@@ -28,6 +30,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <ApolloProvider client={client}>
+        <CssBaseline />
         <Layout>
           <Component {...pageProps} />
         </Layout>

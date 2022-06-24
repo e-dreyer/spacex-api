@@ -14,19 +14,11 @@ type AsyncPageProps = {
 function AsyncPage(props: AsyncPageProps) {
   return (
     <>
-      <Box
-        mt={5}
-        p={1}
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          maxWidth: "800px",
-        }}
-      >
+      {props.loading || props.error ? (
         <LoadingCard loading={props.loading} error={props.error} />
-        {props.children}
-      </Box>
+      ) : (
+        <>{props.children}</>
+      )}
     </>
   );
 }

@@ -10,6 +10,7 @@ import typedefs from "../schema/typeDefs";
 import Layout from "../components/layout";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 const client = new ApolloClient({
   uri: "https://api.spacex.land/graphql/",
@@ -26,14 +27,29 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#6868c7",
+      dark: "#4b4b94",
+    },
+    secondary: {
+      main: "#ea246c",
+    },
+  },
+});
+
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <ApolloProvider client={client}>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </ApolloProvider>
     </>
   );

@@ -6,21 +6,20 @@ export default function Layout({ children }) {
     <>
       <Box>
         {/* Header */}
-        <Box>
-          <Header key="Header" />
-        </Box>
+        <Header key="Header" />
         {/* Wrap the entire app in a box */}
         <Box
           sx={{
-            border: "5px solid black",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "stretch",
             flexDirection: "column",
             alignItems: "center",
-            mt: 5,
+            my: 8,
+            width: "70%",
+            mx: "auto",
           }}
         >
-          <Box sx={{ mt: 1, border: "3px dashed red" }}>{children}</Box>
+          {children}
         </Box>
       </Box>
     </>

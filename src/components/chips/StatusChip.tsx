@@ -8,8 +8,9 @@ import { Maybe } from "../../types/types";
 
 type StatusChipProps = {
   status: Maybe<string> | undefined;
-  size: "small" | "medium" | undefined;
+  size?: "small" | "medium" | undefined;
   label: Maybe<string> | undefined;
+  sx?: any | undefined;
 };
 
 type ChipColors =
@@ -28,6 +29,7 @@ export default function StatusChip(props: StatusChipProps) {
     destroyed: "error",
     retired: "warning",
     active: "success",
+    inactive: "error",
   };
 
   return (
@@ -36,7 +38,7 @@ export default function StatusChip(props: StatusChipProps) {
       color={
         props.status && colors[props.status] ? colors[props.status] : "default"
       }
-      size={props.size ?? "medium"}
+      size={props.size ?? "small"}
       icon={<HelpOutlineIcon />}
     />
   );

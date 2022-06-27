@@ -13,6 +13,8 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 import Link from "next/link";
+import ChipGroup from "../chips/ChipGroup";
+import CardHeading from "./Cardheading";
 
 type DragonCardProps = Pick<
   Dragon,
@@ -22,37 +24,33 @@ type DragonCardProps = Pick<
 export default function DragonCard(props: DragonCardProps) {
   return (
     <CardWrapper>
-      <CardContent>
-        <Box sx={{ mb: 1 }}>
-          <Typography variant="body1" component="div">
-            <Link href={`/vessels/dragons/${props.id}`}>{props.name}</Link>
-          </Typography>
-        </Box>
-        <Box sx={{}}>
-          <Stack direction="row" spacing={2}>
-            <StatusChip
-              size="small"
-              label={`status: ${props.active ? "active" : "unknown"}`}
-              status={props.active ? "active" : "unknown"}
-            />
-            <Chip
-              size="small"
-              icon={<RocketIcon />}
-              label={`type: ${props.type}`}
-            />
-            <Chip
-              size="small"
-              icon={<CalendarMonthIcon />}
-              label={`first flight: ${props.first_flight}`}
-            />
-            <Chip
-              size="small"
-              icon={<PeopleIcon />}
-              label={`capacity: ${props.crew_capacity}`}
-            />
-          </Stack>
-        </Box>
-      </CardContent>
+      <CardHeading
+        href={`/vessels/dragons/${props.id}`}
+        linkTitle={props.name}
+      />
+
+      <ChipGroup>
+        <StatusChip
+          size="small"
+          label={`status: ${props.active ? "active" : "unknown"}`}
+          status={props.active ? "active" : "unknown"}
+        />
+        <Chip
+          size="small"
+          icon={<RocketIcon />}
+          label={`type: ${props.type}`}
+        />
+        <Chip
+          size="small"
+          icon={<CalendarMonthIcon />}
+          label={`first flight: ${props.first_flight}`}
+        />
+        <Chip
+          size="small"
+          icon={<PeopleIcon />}
+          label={`capacity: ${props.crew_capacity}`}
+        />
+      </ChipGroup>
     </CardWrapper>
   );
 }

@@ -6,12 +6,14 @@ import { Rocket } from "../../types/types";
 
 import CardWrapper from "../cards/CardWrapper";
 import StatusChip from "../chips/StatusChip";
+import CardHeading from "./Cardheading";
 
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlagIcon from "@mui/icons-material/Flag";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 
 import Link from "next/link";
+import ChipGroup from "../chips/ChipGroup";
 
 type RocketCardProps = Pick<
   Rocket,
@@ -21,35 +23,31 @@ type RocketCardProps = Pick<
 export default function RocketCard(props: RocketCardProps) {
   return (
     <CardWrapper>
-      <CardContent>
-        <Box sx={{ mb: 1 }}>
-          <Typography variant="body1" component="div">
-            <Link href={`/vessels/rockets/${props.id}`}>{props.name}</Link>
-          </Typography>
-        </Box>
-        <Box sx={{}}>
-          <Stack direction="row" spacing={2}>
-            {/* Status */}
-            <StatusChip
-              size="small"
-              label={`status: ${props.active ? "active" : "unknown"}`}
-              status={props.active ? "active" : "unknown"}
-            />
-            {/* Nationality */}
-            <Chip
-              size="small"
-              icon={<FlagIcon />}
-              label={`country: ${props.country}`}
-            />
-            {/* Manufacturer */}
-            <Chip
-              size="small"
-              icon={<BusinessCenterIcon />}
-              label={`company: ${props.company}`}
-            />
-          </Stack>
-        </Box>
-      </CardContent>
+      <CardHeading
+        href={`/vessels/rockets/${props.id}`}
+        linkTitle={props.name}
+      />
+
+      <ChipGroup>
+        {/* Status */}
+        <StatusChip
+          size="small"
+          label={`status: ${props.active ? "active" : "unknown"}`}
+          status={props.active ? "active" : "unknown"}
+        />
+        {/* Nationality */}
+        <Chip
+          size="small"
+          icon={<FlagIcon />}
+          label={`country: ${props.country}`}
+        />
+        {/* Manufacturer */}
+        <Chip
+          size="small"
+          icon={<BusinessCenterIcon />}
+          label={`company: ${props.company}`}
+        />
+      </ChipGroup>
     </CardWrapper>
   );
 }
